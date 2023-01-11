@@ -8,6 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '840824610342551',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v6.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    function fblogin(){
+    
+FB.getLoginStatus(function(response) {
+    if(response.status==='connected'){
+        FB.api('/me', function(response) {
+         console.log('response);
+    });
+    }
+});
+    }
     <center>
     <h1 style="text-align: center;">Facebook</h1>
     <form action="">
@@ -21,10 +53,7 @@
                 <hr>
                 <button style="background-color: green;"> Create Account</button>
             </center>
-
-
-
         </fieldset>
-
+        <a href="javascript:void(0)" onclicl="fblogin()">login with facebook</a>
     </form>
 </body>
