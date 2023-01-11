@@ -31,29 +31,13 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     function fblogin(){
-    
-FB.getLoginStatus(function(response) {
+    FB.getLoginStatus(function(response) {
     if(response.status==='connected'){
         FB.api('/me', function(response) {
-         console.log('response);
+         console.log(response);
     });
     }
 });
     }
-    <center>
-    <h1 style="text-align: center;">Facebook</h1>
-    <form action="">
-        <fieldset>
-            <input type="text" placeholder="email address or phone no."><br><br>
-            <input  type="password" placeholder="password"><br><br>
-            <button style="background-color: blue;">login</button>
-        </center>
-            <center>
-                <div style="background-color: blue;">Forgotten password?</div>
-                <hr>
-                <button style="background-color: green;"> Create Account</button>
-            </center>
-        </fieldset>
-        <a href="javascript:void(0)" onclicl="fblogin()">login with facebook</a>
-    </form>
+    
 </body>
